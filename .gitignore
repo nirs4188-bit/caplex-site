@@ -1,0 +1,13 @@
+node_modules
+dist
+.DS_Store
+
+# Build artifacts / accidental deploy folders
+assets
+caplex-netlify-dist-with-redirects*
+caplexdeploy_dist*
+index 1.html
+netlify-force.txt*
+robots.txt
+_redirects
+index.html
