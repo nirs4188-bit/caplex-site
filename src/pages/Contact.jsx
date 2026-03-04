@@ -1,19 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import Section from "../components/Section.jsx";
 
 export default function Contact() {
+  const [submitted, setSubmitted] = useState(false);
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    const form = e.target;
+    const data = new URLSearchParams(new FormData(form));
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: data.toString(),
+    })
+      .then(() => setSubmitted(true))
+      .catch(() => alert("Something went wrong. Please try again."));
+  }
+
   return (
     <>
       <Section
         title="Contact"
-        subtitle="Tell us what you’re trying to accomplish. We’ll respond with next steps and whether we’re a fit."
+        subtitle="Tell us what you're trying to accomplish. We'll respond with next steps and whether we're a fit."
       >
         <div className="grid2">
           <div className="card pad">
             <div className="badge">Fastest response</div>
             <h3 style={{ marginTop: 10 }}>WhatsApp</h3>
             <p className="sub">
-              Your clients like WhatsApp — so do we. Put your WhatsApp number here and the button will work.
+              Reach us directly on WhatsApp for the fastest response.
             </p>
 
             {/* Replace 15551234567 with your WhatsApp number in international format */}
@@ -28,36 +43,51 @@ export default function Contact() {
 
             <div className="hr" />
             <div className="small">
-              Email: add@yourdomain.com<br/>
               Location: Dallas–Fort Worth, TX
             </div>
           </div>
 
           <div className="card pad">
             <div className="badge">Contact form</div>
-            <p className="sub" style={{ marginTop: 10 }}>
-              This is a simple front-end form (no backend). If you want form submissions emailed to you,
-              I’ll add Netlify Forms in 2 minutes.
-            </p>
-            <form className="form">
-              <input className="input" placeholder="Name" />
-              <input className="input" placeholder="Email" />
-              <input className="input" placeholder="Phone / WhatsApp" />
-              <textarea className="input" placeholder="What are you looking to do?" />
-              <button type="button" className="btn primary">Send</button>
-            </form>
-          </div>
-        </div>
-      </Section>
-
-      <Section
-        title="Netlify Forms (optional)"
-        subtitle="If you want leads captured automatically, we’ll enable Netlify’s built-in form handling."
-      >
-        <div className="card pad">
-          <div className="small">
-            Reply “enable Netlify Forms” and I’ll update the Contact page so submissions show up in your Netlify dashboard
-            (and can email you notifications).
+            {submitted ? (
+              <div style={{ marginTop: 10 }}>
+                <h3 style={{ color: "var(--accent2)" }}>Message received</h3>
+                <p className="sub">We'll get back to you shortly.</p>
+                <button
+                  type="button"
+                  className="btn"
+                  onClick={() => setSubmitted(false)}
+                >
+                  Send another message
+                </button>
+              </div>
+            ) : (
+              <>
+                <p className="sub" style={{ marginTop: 10 }}>
+                  Fill out the form and we'll be in touch within one business day.
+                </p>
+                <form
+                  className="form"
+                  name="contact"
+                  method="POST"
+                  data-netlify="true"
+                  netlify-honeypot="bot-field"
+                  onSubmit={handleSubmit}
+                >
+                  <input type="hidden" name="form-name" value="contact" />
+                  <p hidden>
+                    <label>
+                      Don't fill this out: <input name="bot-field" />
+                    </label>
+                  </p>
+                  <input className="input" name="name" placeholder="Name" required />
+                  <input className="input" name="email" type="email" placeholder="Email" required />
+                  <input className="input" name="phone" placeholder="Phone / WhatsApp" />
+                  <textarea className="input" name="message" placeholder="What are you looking to do?" required />
+                  <button type="submit" className="btn primary">Send</button>
+                </form>
+              </>
+            )}
           </div>
         </div>
       </Section>

@@ -16,7 +16,7 @@ export default function Footer() {
             operations, and long-term compounding.
           </div>
           <div className="small" style={{ marginTop: 10 }}>
-            © {year} Caplex Equity LLC. All rights reserved.
+            &copy; {year} Caplex Equity LLC. All rights reserved.
           </div>
         </div>
 
@@ -33,13 +33,8 @@ export default function Footer() {
         <div className="small">
           <div style={{ fontWeight: 700, color: "rgba(255,255,255,.9)", marginBottom: 8 }}>Contact</div>
           <div style={{ display: "grid", gap: 8 }}>
-            <div>DFW Metroplex • Texas</div>
-            <div>
-              WhatsApp / Call: <span style={{ opacity: .9 }}>Add your number</span>
-            </div>
-            <div>
-              Email: <span style={{ opacity: .9 }}>add@yourdomain.com</span>
-            </div>
+            <div>DFW Metroplex &bull; Texas</div>
+            <Link to="/contact" style={{ opacity: .9 }}>Get in touch &rarr;</Link>
           </div>
         </div>
       </div>
