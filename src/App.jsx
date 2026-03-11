@@ -480,6 +480,67 @@ const STRIP_PHOTOS = [
   { src: "/images/731-hull/ARS05277_sm.jpg",                      label: "Denison, TX" },
 ];
 
+// ---------------- THE PLATFORM ECOSYSTEM ----------------
+const ECOSYSTEM = [
+  {
+    name: "Apex Acquisitions",
+    role: "Off-Market Deal Sourcing",
+    description: "We find off-market and wholesale deals before they ever hit the MLS.",
+    url: null,
+    live: false,
+    phase: "Acquire",
+  },
+  {
+    name: "Caplex Equity",
+    role: "Investment Strategy & Acquisitions",
+    description: "Investment-focused brokerage. We help you find, underwrite, and close smart deals in DFW.",
+    url: "https://caplexequity.com",
+    live: true,
+    current: true,
+    phase: "Acquire",
+  },
+  {
+    name: "AMP Live Group",
+    role: "Construction & Renovation",
+    description: "Full-service renovation and remodeling. Alexa Peer on-site every week.",
+    url: "https://amplivegroupllc.com",
+    live: true,
+    phase: "Improve",
+  },
+  {
+    name: "Furnish4Stay",
+    role: "STR & Furnished Rental Setup",
+    description: "Full furnishing and design service for Airbnb, mid-term, and furnished rentals.",
+    url: null,
+    live: false,
+    phase: "Furnish",
+  },
+  {
+    name: "Fixory",
+    role: "Property Maintenance & Repairs",
+    description: "Ongoing maintenance, repairs, and turnovers for rental investors.",
+    url: null,
+    live: false,
+    phase: "Maintain",
+  },
+  {
+    name: "Bloxx Property Management",
+    role: "Leasing & Operations",
+    description: "Full-service property management built for investors. By investors, for investors.",
+    url: "https://bloxxpm.com",
+    live: true,
+    phase: "Operate",
+  },
+];
+
+const PHASE_STYLE = {
+  Acquire:  { badge: "bg-blue-100 text-blue-700",   card: "bg-blue-50 border-blue-100"   },
+  Improve:  { badge: "bg-amber-100 text-amber-700",  card: "bg-amber-50 border-amber-100" },
+  Furnish:  { badge: "bg-violet-100 text-violet-700",card: "bg-violet-50 border-violet-100"},
+  Maintain: { badge: "bg-orange-100 text-orange-700",card: "bg-orange-50 border-orange-100"},
+  Operate:  { badge: "bg-emerald-100 text-emerald-700",card:"bg-emerald-50 border-emerald-100"},
+};
+
 // ---------------- VIDEOS ----------------
 const ytThumb = (id) => `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
 const ytThumbFallback = (id) => `https://img.youtube.com/vi/${id}/0.jpg`;
@@ -1287,6 +1348,9 @@ function HomePage() {
 
         {/* Insights */}
         <InsightsSection />
+
+        {/* The Platform */}
+        <PlatformSection />
 
         {/* Final CTA */}
         <div className="mt-14 rounded-[36px] relative overflow-hidden border bg-gray-900 px-8 py-10 text-white shadow-sm sm:px-10">
@@ -2249,10 +2313,133 @@ function ContactPage() {
 }
 
 // ---------------- FOOTER ----------------
+// ---------------- ECOSYSTEM BAR ----------------
+function EcosystemBar() {
+  const others = ECOSYSTEM.filter(co => !co.current);
+  return (
+    <div style={{background:"#0d0d0d",borderBottom:"1px solid #1c1c1c"}}>
+      <div className="max-w-6xl mx-auto px-6 flex items-center gap-0" style={{height:"36px"}}>
+        {/* Label */}
+        <span style={{color:"#6b7280",fontSize:"11px",fontWeight:600,letterSpacing:".1em",textTransform:"uppercase",paddingRight:"16px",borderRight:"1px solid #2a2a2a",marginRight:"16px",whiteSpace:"nowrap"}}>
+          The Platform
+        </span>
+        {/* Companies */}
+        <div className="flex items-center gap-0 overflow-x-auto" style={{scrollbarWidth:"none"}}>
+          {others.map((co, i) => (
+            <React.Fragment key={co.name}>
+              {i > 0 && <span style={{color:"#2a2a2a",fontSize:"13px",margin:"0 10px",userSelect:"none"}}>|</span>}
+              {co.live ? (
+                <a href={co.url} target="_blank" rel="noreferrer"
+                  style={{color:"#e5e7eb",fontSize:"12px",fontWeight:500,textDecoration:"none",whiteSpace:"nowrap",transition:"color .15s"}}
+                  onMouseOver={e=>e.target.style.color="#fff"}
+                  onMouseOut={e=>e.target.style.color="#e5e7eb"}>
+                  {co.name}
+                </a>
+              ) : (
+                <span style={{color:"#3f3f3f",fontSize:"12px",fontWeight:400,whiteSpace:"nowrap"}}>
+                  {co.name} <span style={{color:"#2d2d2d",fontSize:"10px"}}>· soon</span>
+                </span>
+              )}
+            </React.Fragment>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ---------------- PLATFORM SECTION ----------------
+function PlatformSection() {
+  return (
+    <div className="mt-14 rounded-[36px] border bg-gray-50 px-8 py-12">
+      <div className="text-center">
+        <div className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-4 py-1.5 text-xs font-semibold tracking-widest text-gray-500">
+          THE PLATFORM
+        </div>
+        <h2 className="mt-4 text-3xl font-bold text-gray-900">One team. Every phase of real estate.</h2>
+        <p className="mt-3 text-lg text-gray-600 max-w-2xl mx-auto">
+          We built a connected group of companies so your investment doesn't need six different vendors. One team handles it all — from sourcing to management.
+        </p>
+      </div>
+
+      {/* Phase flow */}
+      <div className="mt-8 flex items-center justify-center gap-2 flex-wrap">
+        {["Acquire", "Improve", "Furnish", "Maintain", "Operate"].map((phase, i) => (
+          <React.Fragment key={phase}>
+            {i > 0 && <span className="text-gray-300 text-sm font-bold">→</span>}
+            <span className={cx("px-3 py-1 rounded-full text-xs font-semibold", PHASE_STYLE[phase].badge)}>
+              {phase}
+            </span>
+          </React.Fragment>
+        ))}
+      </div>
+
+      {/* Company cards */}
+      <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {ECOSYSTEM.map((co) => {
+          const style = PHASE_STYLE[co.phase];
+          return (
+            <div key={co.name}
+              className={cx(
+                "rounded-2xl border p-5 flex flex-col gap-3 transition-opacity",
+                co.live ? style.card : "bg-white border-gray-100 opacity-55"
+              )}>
+              <div className="flex items-start justify-between gap-2">
+                <div>
+                  <span className={cx("inline-block text-xs font-semibold px-2 py-0.5 rounded-full mb-2", style.badge)}>
+                    {co.phase}
+                  </span>
+                  <div className="font-bold text-gray-900 leading-snug">{co.name}</div>
+                  <div className="text-sm text-gray-600 font-medium mt-0.5">{co.role}</div>
+                </div>
+                {co.current && (
+                  <span className="shrink-0 text-xs font-semibold bg-emerald-600 text-white px-2 py-0.5 rounded-full">You're here</span>
+                )}
+                {!co.live && (
+                  <span className="shrink-0 text-xs font-semibold bg-gray-100 text-gray-500 px-2 py-0.5 rounded-full">Coming soon</span>
+                )}
+              </div>
+              <p className="text-sm text-gray-600 leading-relaxed flex-1">{co.description}</p>
+              {co.live && !co.current && (
+                <a href={co.url} target="_blank" rel="noreferrer"
+                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-gray-900 hover:underline mt-auto">
+                  Visit {co.name.split(" ")[0]} <ArrowRight className="h-3.5 w-3.5" />
+                </a>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 function Footer() {
   return (
     <footer className="border-t bg-gray-50">
       <div className="max-w-6xl mx-auto px-6 py-10">
+
+        {/* Ecosystem strip */}
+        <div className="pb-8 mb-8 border-b">
+          <div className="text-xs font-semibold tracking-widest text-gray-400 mb-4">THE PLATFORM</div>
+          <div className="flex flex-wrap gap-x-6 gap-y-2">
+            {ECOSYSTEM.map((co) => (
+              co.current ? (
+                <span key={co.name} className="text-sm font-semibold text-emerald-600">{co.name}</span>
+              ) : co.live ? (
+                <a key={co.name} href={co.url} target="_blank" rel="noreferrer"
+                  className="text-sm text-gray-600 hover:text-gray-900 hover:underline inline-flex items-center gap-1">
+                  {co.name} <ArrowRight className="h-3 w-3" />
+                </a>
+              ) : (
+                <span key={co.name} className="text-sm text-gray-400">
+                  {co.name} <span className="text-xs text-gray-300">· Soon</span>
+                </span>
+              )
+            ))}
+          </div>
+        </div>
+
         <div className="grid gap-8 lg:grid-cols-3">
           <div>
             <div className="font-bold text-xl">CAPLEX EQUITY LLC</div>
@@ -2304,6 +2491,7 @@ export default function App() {
   const route = useRoute();
   return (
     <div className="min-h-screen bg-white text-gray-900">
+      <EcosystemBar />
       <TopNav />
       {route === "/" && <HomePage />}
       {route === "case" && <CasePage />}
