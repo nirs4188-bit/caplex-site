@@ -2,10 +2,11 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "caplex-site",
-      "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev"],
-      "port": 5173
+      "name": "caplex-dev",
+      "runtimeExecutable": "C:\\nvm4w\\nodejs\\node.exe",
+      "runtimeArgs": ["C:\\Users\\nirs4\\caplex-site\\node_modules\\vite\\bin\\vite.js", "--port", "5173"],
+      "port": 5173,
+      "autoPort": true
     }
   ]
 }

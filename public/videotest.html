@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<body>
+<video src="/images/Videos%20For%20Caplex/Hull_test.mp4" controls width="640" height="360"></video>
+<script>
+const v = document.querySelector('video');
+v.addEventListener('loadedmetadata', () => document.title = 'LOADED: ' + v.duration);
+v.addEventListener('error', e => document.title = 'ERROR: ' + v.error?.message);
+setInterval(() => console.log(v.readyState, v.networkState, v.error?.message), 1000);
+</script>
+</body>
+</html>
