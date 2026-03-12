@@ -89,7 +89,19 @@
       "Bash(del \"C:\\\\Users\\\\nirs4\\\\caplex-site\\\\public\\\\videotest.html\")",
       "Bash(rm -f \"/mnt/c/Users/nirs4/caplex-site/public/videotest.html\")",
       "Bash(rm -f \"/mnt/c/Users/nirs4/caplex-site/out.html\")",
-      "Bash(dir \"C:\\\\Users\\\\nirs4\\\\caplex-site\\\\public\\\\images\" /b /ad)"
+      "Bash(dir \"C:\\\\Users\\\\nirs4\\\\caplex-site\\\\public\\\\images\" /b /ad)",
+      "WebFetch(domain:bloxxpm.com)",
+      "WebFetch(domain:amplivegroupllc.com)",
+      "Bash(npx vite build)",
+      "Bash(Select-Object Name)",
+      "Bash(gh repo list nirs4188-bit --limit 20)",
+      "WebFetch(domain:github.com)",
+      "Bash(curl -sI https://cap-lex.com/)",
+      "Bash(curl -s https://cap-lex.com/)",
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\nirs4\\\\caplex-site\\\\public\" -Recurse)",
+      "Bash(Where-Object { $_Name -like '*#*' })",
+      "Bash(Select-Object FullName)",
+      "Bash(find \"/c/Users/nirs4/caplex-site/public\" -name '*#*' -type d -exec rm -rf {} +)"
     ]
   }
 }
