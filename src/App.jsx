@@ -15,10 +15,9 @@ const CONFIG = {
     tagline: "We're Nir Sheinbein & Alexa Peer — a Dallas-based team with close to a decade of experience and 300+ transactions. Whether you're buying your first home as a smart investment, house hacking a duplex, launching an Airbnb, or growing a portfolio from out of state — we source, underwrite, and execute with you."
   },
   contact: {
-    phoneDisplay: "(469) 331‑6295",
-    phoneHref: "tel:+14693316295",
-    textHref: "sms:+14693316295",
-    whatsappHref: "https://wa.me/14693316295",
+    phoneHref: "tel:+18585395219",
+    textHref: "sms:+18585395219",
+    whatsappHref: "https://wa.me/18585395219",
     emailDisplay: "nir@cap-lex.com",
     emailHref: "mailto:nir@cap-lex.com",
     bookingLabel: "Book 15‑min call",
@@ -2268,10 +2267,10 @@ function ContactPage() {
             <div className="text-2xl font-bold">Reach me</div>
             <div className="mt-5 grid gap-4 text-lg">
               <a className="flex items-center gap-3 rounded-2xl border bg-white px-5 py-4 font-semibold hover:bg-gray-50 text-gray-900" href={CONFIG.contact.phoneHref}>
-                <Phone className="h-5 w-5 text-emerald-600" /> Call {CONFIG.contact.phoneDisplay}
+                <Phone className="h-5 w-5 text-emerald-600" /> Call
               </a>
               <a className="flex items-center gap-3 rounded-2xl border bg-white px-5 py-4 font-semibold hover:bg-gray-50 text-gray-900" href={CONFIG.contact.textHref}>
-                <MessageCircle className="h-5 w-5 text-emerald-600" /> Text {CONFIG.contact.phoneDisplay}
+                <MessageCircle className="h-5 w-5 text-emerald-600" /> Text
               </a>
               <a className="flex items-center gap-3 rounded-2xl border bg-white px-5 py-4 font-semibold hover:bg-gray-50 text-gray-900" href={CONFIG.contact.whatsappHref} target="_blank" rel="noreferrer">
                 <MessageCircle className="h-5 w-5 text-emerald-600" /> WhatsApp
@@ -2448,7 +2447,7 @@ function Footer() {
           <div className="text-gray-700">
             <div className="font-semibold">Contact</div>
             <div className="mt-2 grid gap-1">
-              <a className="hover:underline" href={CONFIG.contact.phoneHref}>{CONFIG.contact.phoneDisplay}</a>
+              <a className="hover:underline" href={CONFIG.contact.whatsappHref} target="_blank" rel="noreferrer">WhatsApp</a>
               <a className="hover:underline" href={CONFIG.contact.emailHref}>{CONFIG.contact.emailDisplay}</a>
               <a className="hover:underline" href={CONFIG.contact.bookingHref} target="_blank" rel="noreferrer">{CONFIG.contact.bookingLabel}</a>
             </div>
