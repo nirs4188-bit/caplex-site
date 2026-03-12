@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://caplexequity.com/sitemap.xml
+Sitemap: https://cap-lex.com/sitemap.xml
