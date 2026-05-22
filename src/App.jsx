@@ -482,11 +482,11 @@ const STRIP_PHOTOS = [
 // ---------------- THE PLATFORM ECOSYSTEM ----------------
 const ECOSYSTEM = [
   {
-    name: "Apex Acquisitions",
+    name: "Apexx Acquisitions",
     role: "Off-Market Deal Sourcing",
     description: "We find off-market and wholesale deals before they ever hit the MLS.",
-    url: null,
-    live: false,
+    url: "https://apexxacquisitions.com",
+    live: true,
     phase: "Acquire",
   },
   {
@@ -510,16 +510,16 @@ const ECOSYSTEM = [
     name: "Furnish4Stay",
     role: "STR & Furnished Rental Setup",
     description: "Full furnishing and design service for Airbnb, mid-term, and furnished rentals.",
-    url: null,
-    live: false,
+    url: "https://furnish4stay.com",
+    live: true,
     phase: "Furnish",
   },
   {
     name: "Fixory",
     role: "Property Maintenance & Repairs",
     description: "Ongoing maintenance, repairs, and turnovers for rental investors.",
-    url: null,
-    live: false,
+    url: "https://fixory.repair",
+    live: true,
     phase: "Maintain",
   },
   {
