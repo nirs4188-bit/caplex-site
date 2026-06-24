@@ -16,6 +16,16 @@
   to     = "/sms-privacy-policy.html"
   status = 200
 
+[[redirects]]
+  from   = "/sms-terms"
+  to     = "/sms-terms.html"
+  status = 200
+
+[[redirects]]
+  from   = "/sms-terms.html"
+  to     = "/sms-terms.html"
+  status = 200
+
 # SPA catch-all: serve index.html for every path so hash routing keeps working
 # on direct URL loads and Netlify previews
 [[redirects]]
