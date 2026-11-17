@@ -12,7 +12,7 @@ const CONFIG = {
     submark: "EQUITY",
     city: "Dallas–Fort Worth",
     headline: "We help you buy a home that's a great investment in DFW.",
-    tagline: "We're Nir Sheinbein & Alexa Peer — a Dallas-based team with close to a decade of experience and 300+ transactions. Whether you're buying your first home as a smart investment, house hacking a duplex, launching an Airbnb, or growing a portfolio from out of state — we source, underwrite, and execute with you."
+    tagline: "We're Nir Sheinbein & Alexa Sheinbein — a Dallas-based team with close to a decade of experience and 300+ transactions. Whether you're buying your first home as a smart investment, house hacking a duplex, launching an Airbnb, or growing a portfolio from out of state — we source, underwrite, and execute with you."
   },
   contact: {
     phoneHref: "tel:+18585395219",
@@ -501,7 +501,7 @@ const ECOSYSTEM = [
   {
     name: "AMP Live Group",
     role: "Construction & Renovation",
-    description: "Full-service renovation and remodeling. Alexa Peer on-site every week.",
+    description: "Full-service renovation and remodeling. Alexa Sheinbein on-site every week.",
     url: "https://amplivegroupllc.com",
     live: true,
     phase: "Improve",
@@ -1974,7 +1974,7 @@ function AboutPage() {
         {/* Founders intro */}
         <div className="mt-10 rounded-[36px] border bg-gray-50 px-8 py-10">
           <div className="text-sm font-semibold tracking-widest text-gray-500 mb-2">THE FOUNDERS</div>
-          <h2 className="text-3xl font-bold text-gray-900">Nir Sheinbein & Alexa Peer</h2>
+          <h2 className="text-3xl font-bold text-gray-900">Nir Sheinbein & Alexa Sheinbein</h2>
 
           <div className="mt-8 grid gap-10 lg:grid-cols-2 lg:items-start">
             {/* Founder photos */}
@@ -1989,7 +1989,7 @@ function AboutPage() {
               <div className="rounded-2xl overflow-hidden shadow-md">
                 <img src="/images/alexa-portrait.jpg" alt="Alexa Sheinbein" loading="lazy" className="w-full aspect-[3/4] object-cover bg-gray-100" />
                 <div className="bg-gray-900 px-3 py-2">
-                  <div className="text-white font-semibold text-sm">Alexa Peer</div>
+                  <div className="text-white font-semibold text-sm">Alexa Sheinbein</div>
                   <div className="text-gray-400 text-xs">Co-Founder · Construction & Development</div>
                 </div>
               </div>
@@ -1998,7 +1998,7 @@ function AboutPage() {
             {/* Founders text */}
             <div className="grid gap-5 text-lg text-gray-700">
               <p>
-                Nir Sheinbein and Alexa Peer are Texas real estate investment specialists and co-founders of CAPLEX Equity — a husband-and-wife team providing comprehensive solutions for investors with an approach built on transparency, trust, and genuine personal connection.
+                Nir Sheinbein and Alexa Sheinbein are Texas real estate investment specialists and co-founders of CAPLEX Equity — a husband-and-wife team providing comprehensive solutions for investors with an approach built on transparency, trust, and genuine personal connection.
               </p>
               <p>
                 We're always looking for new clients — but for us, choosing the right people matters just as much as the deals themselves. Over years in real estate and in business, we've learned that mutual respect is central to success. Real estate has unexpected challenges and setbacks, and the way to handle them is through honest communication and respect — on both sides.
@@ -2075,12 +2075,12 @@ function AboutPage() {
         <div className="mt-10">
           <div className="rounded-[36px] border bg-gray-50 px-8 py-10">
             <div className="text-sm font-semibold tracking-widest text-gray-500 mb-2">THE TEAM</div>
-            <h2 className="text-3xl font-bold text-gray-900">Alexa Peer — Co-Founder</h2>
+            <h2 className="text-3xl font-bold text-gray-900">Alexa Sheinbein — Co-Founder</h2>
             <div className="mt-8 grid gap-10 lg:grid-cols-2 lg:items-start">
               <div className="grid gap-4">
                 <iframe
                   src="https://www.youtube.com/embed/IOggPcATATE"
-                  title="Alexa Peer — project walkthrough"
+                  title="Alexa Sheinbein — project walkthrough"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                   className="w-full rounded-3xl aspect-[9/16] bg-black shadow-md border-0"
@@ -2107,7 +2107,7 @@ function AboutPage() {
               </div>
               <div className="grid gap-5 text-lg text-gray-700">
                 <p>
-                  Alexa Peer is the Co-Founder and the driving force behind every project on the ground. She leads all construction management, design, renovation planning, and development — overseeing every build from first demo to final walkthrough.
+                  Alexa Sheinbein is the Co-Founder and the driving force behind every project on the ground. She leads all construction management, design, renovation planning, and development — overseeing every build from first demo to final walkthrough.
                 </p>
                 <p>
                   While Nir handles deal analysis, underwriting, and client relationships, Alexa owns execution. She manages contractor crews, coordinates trades, tracks timelines, controls budgets, and makes sure nothing falls through the cracks.
@@ -2211,7 +2211,7 @@ function VideosPage() {
         <div className="mt-14">
           <div className="rounded-[36px] bg-gray-50 border px-8 py-10">
             <div className="text-sm font-semibold tracking-widest text-gray-500 mb-2">THE TEAM ON THE GROUND</div>
-            <h2 className="text-3xl font-bold text-gray-900">Alexa Peer — Co-Founder</h2>
+            <h2 className="text-3xl font-bold text-gray-900">Alexa Sheinbein — Co-Founder</h2>
             <p className="mt-3 text-lg text-gray-600 max-w-2xl">
               Alexa leads all construction, design, and renovation planning at CAPLEX. These videos give you a real look at what that means day to day — from on-site walkthroughs to zoning battles to staging a finished unit.
             </p>
