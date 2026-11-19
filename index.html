@@ -71,6 +71,16 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-C5G37PENY1');
+      // Count contact clicks as leads (calls, texts, WhatsApp, email)
+      document.addEventListener('click', function (e) {
+        var a = e.target.closest && e.target.closest('a[href]');
+        if (!a || !window.gtag) return;
+        var h = a.getAttribute('href') || '';
+        if (h.indexOf('tel:') === 0) gtag('event', 'click_to_call', { link_url: h });
+        else if (h.indexOf('sms:') === 0) gtag('event', 'sms_click', { link_url: h });
+        else if (h.indexOf('wa.me/') !== -1 || h.indexOf('whatsapp.com') !== -1) gtag('event', 'whatsapp_click', { link_url: h });
+        else if (h.indexOf('mailto:') === 0) gtag('event', 'email_click', { link_url: h });
+      }, true);
     </script>
   </head>
   <body>
